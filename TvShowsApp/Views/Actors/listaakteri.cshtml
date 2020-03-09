@@ -1,0 +1,70 @@
+﻿@model IEnumerable<TvShowsApp.Models.Actors>
+
+@{
+    ViewData["Title"] = "ListaAkteri";
+}
+
+<h1>Index</h1>
+
+<partial name="ExportExcelPartialView" />
+
+
+
+<table class="table" id="headerTable">
+    <thead>
+        <tr  class="table_styling">
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImdbUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TvShow.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+        @foreach (var item in Model)
+        {
+            <tr class="table_styling">
+                <td>
+                    @if (item.ImageUrl != null)
+                    {
+                        <img src="@Url.Content(item.ImageUrl)" alt="image" style="width:20%" />
+                    }
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ImageUrl)
+                    </td>*@
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+
+                <td class="title_style">
+                    @*@Html.DisplayFor(modelItem => item.ImdbUrl)*@
+                    <a class="title_style" href="@item.ImdbUrl" target="_blank">@item.Name @item.LastName</a>
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.TvShow.Title)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

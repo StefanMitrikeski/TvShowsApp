@@ -1,0 +1,62 @@
+﻿    @model IEnumerable<TvShowsApp.Models.TvShow>
+@{
+    ViewData["Title"] = "Movies";
+}
+
+<h1>Movies</h1>
+
+<table class="table">
+    <thead>
+        <tr class="table_styling">
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImdbUrl)
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table_styling">
+                <td>
+                    @if (item.ImageUrl != null)
+                    {
+                        <img src="@Url.Content(item.ImageUrl)" alt="image" style="width:20%" />
+                    }
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.Rating)
+                    <i class="fas fa-star"></i>
+                </td>
+                <td>
+                    @*sHtml.DisplayFor(modelItem => item.ImdbUrl)*@
+                    <a class="title_style" href="@item.ImdbUrl" target="_blank">@item.Title</a>
+                </td>
+
+                <td class="button_style">
+                    <a asp-controller="RentedMovies" asp-route-id="@item.ID" asp-action="Create">Rent<i class="fas fa-cart-plus"></i></a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+

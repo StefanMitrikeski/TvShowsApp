@@ -1,0 +1,61 @@
+﻿@model IEnumerable<TvShowsApp.Models.RentedMovies>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@*<p>
+      <a asp-action="Create">Create New</a>
+    </p>*@
+@*
+    <a class="details_style" href="/RentedMovies/ExportExcel">Export Excel</a>
+     <a class="details_style" href="/RentedMovies/SandMail">Notify Customers</a>
+*@
+
+<partial name="ExportExcelPartialView" />
+
+
+<table class="table" id="headerTable">
+    <thead>
+        <tr class="table_styling">
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TvShow)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+        @foreach (var item in Model)
+        {
+            <tr class="table_styling">
+                <td class="title_style">
+                    @if (item.TvShow.ImageUrl != null)
+                    {
+                        <span>@Html.DisplayFor(modelItem => item.UserId)</span> <img src="@Url.Content(item.TvShow.ImageUrl)" alt="image" style="width:5%" />
+                    }
+                </td>
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.TvShow.Title)
+                </td>
+
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.RentalDate)
+                </td>
+
+                <td class="title_style">
+                    @Html.DisplayFor(modelItem => item.ReturnDate)
+                </td>
+                <td class="title_style">
+                    <a asp-action="Edit" asp-route-id="@item.RentedMoviesId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RentedMoviesId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RentedMoviesId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

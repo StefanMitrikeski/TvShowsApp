@@ -1,0 +1,139 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+main {
+    margin-top: 10%;
+}
+
+body {
+    height: auto;
+    background-image: url("http://4.bp.blogspot.com/--SsV8E3sGb4/VkFxgBZV4zI/AAAAAAAABW0/zg0fvueJW0U/s1600/fotolia_38070558_movie-projector-old-memories.jpg");
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    color: white;
+}
+#myInput {
+    width: 30%;
+    margin-left: 2%;
+    border-radius: 15px;
+    background-color: rgba(0,0,0, 0.2);
+    border: none;
+}
+.fa_search {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 5%;
+    height: 2.37rem;
+    line-height: 2.375rem;
+    text-align: center;
+    color: white;
+}
+
+.col-md-4 {
+    margin: 0 auto;
+}
+
+.edit_style, .details_style, .delete_style, .actors_style {
+    margin-left: 55px;
+}
+
+.title_style, .edit_style, .details_style, .delete_style, .actors_style {
+    transition 0s;
+    color: rgba(103, 143, 207);
+    color: white;
+}
+
+    .title_style:hover, .edit_style:hover, .details_style:hover, .delete_style:hover, .actors_style:hover {
+        transition: 500ms;
+        color: rgba(46, 124, 232);
+        text-decoration: none;
+    }
+
+.fas {
+    color: rgba(237, 223, 145);
+}
+
+.table_styling, .actors_list_style {
+    transition: 0s;
+    background-color: rgba(0,0,0, 0.5);
+    color: white;
+}
+
+    .table_styling:hover, .actors_list_style:hover {
+        transition: 500ms;
+        background-color: rgba(52, 53, 54, 0.5);
+    }
+
+.button_style {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
